@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* UniCLK White Theme */
+  --bg-dark: #ffffff;
+  /* White Background */
+  --bg-card: #f8fafc;
+  /* slate-50 */
+  --primary: #0ea5e9;
+  /* Cyan accent */
+  --primary-glow: rgba(14, 165, 233, 0.2);
+  --secondary: #0f172a;
+  /* Navy for text and depth */
+  --accent: #f43f5e;
+  --text-main: #0f172a;
+  /* Navy text */
+  --text-muted: #64748b;
+  /* Slate text */
+
+  /* Glassmorphism */
+  --glass-bg: rgba(21, 21, 26, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
+
+  /* Layout */
+  --container-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --trans-fast: 0.2s ease;
+  --trans-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
+/* Glassmorphism Utility Refined for Light Theme */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-card {
+  background: #ffffff;
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+.bg-gradient-main {
+  background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.05), transparent),
+    radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.03), transparent);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--trans-fast);
+}
+
+input,
+select {
+  background: #f1f5f9;
+  border: 1px solid #e1e7ef;
+  color: var(--text-main);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-glow);
+}

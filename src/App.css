@@ -1,0 +1,7 @@
+/* Main layout container */
+.app-container {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Add any App-specific styling here if needed */
