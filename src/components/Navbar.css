@@ -114,7 +114,24 @@
 
 @media (max-width: 968px) {
 
-    .nav-links,
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--bg-card);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active-mobile {
+        display: flex;
+    }
+
     .support-btn {
         display: none;
     }

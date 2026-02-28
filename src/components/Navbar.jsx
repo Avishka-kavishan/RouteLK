@@ -1,8 +1,15 @@
-import React from 'react';
-import { Menu, User, Phone, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { Menu, X, User, Phone, MapPin } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = ({ activePage, onPageChange }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleNavClick = (page) => {
+    setIsMenuOpen(false);
+    onPageChange(page);
+  };
+
   return (
     <nav className="navbar glass">
       <div className="navbar-container">
@@ -13,26 +20,26 @@ const Navbar = ({ activePage, onPageChange }) => {
           <span className="brand-name">Route<span>LK</span></span>
         </div>
 
-        <div className="nav-links">
+        <div className={`nav-links ${isMenuOpen ? 'active-mobile' : ''}`}>
           <a
             href="#home"
             className={activePage === 'home' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); onPageChange('home'); }}
+            onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}
           >Home</a>
           <a
             href="#buses"
             className={activePage === 'buses' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); onPageChange('buses'); }}
+            onClick={(e) => { e.preventDefault(); handleNavClick('buses'); }}
           >Buses</a>
           <a
             href="#about"
             className={activePage === 'about' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); onPageChange('about'); }}
+            onClick={(e) => { e.preventDefault(); handleNavClick('about'); }}
           >About</a>
           <a
             href="#contact"
             className={activePage === 'contact' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); onPageChange('contact'); }}
+            onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }}
           >Contact</a>
         </div>
 
@@ -45,8 +52,8 @@ const Navbar = ({ activePage, onPageChange }) => {
             <User size={18} />
             <span>Login</span>
           </button>
-          <button className="menu-btn">
-            <Menu size={24} />
+          <button className="menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
